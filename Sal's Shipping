@@ -1,0 +1,47 @@
+# Sal's Shipping
+# This exercise will take the weight of a package and determine the cheapest way to ship that package using Sal’s Shippers, which offers three shipping options.
+
+weight = 41.5
+print("Weight:", weight)
+
+# Ground shipping
+if weight <= 2.00:
+  gs_price = 20.00 + (1.50 * weight)
+elif weight <= 6.00:
+  gs_price = 20.00 + (3.00 * weight)
+elif weight <= 10.00:
+  gs_price = 20.00 + (4.00 * weight)
+else:
+  gs_price = 20.00 + (4.75 * weight)
+
+print("Ground shipping price:", gs_price)
+
+# Ground shipping premium
+gsp_price = 125.00
+
+print ("Ground shipping premium price:", gsp_price)
+
+#Drone shipping
+if weight <= 2.00:
+  ds_price = 4.50 * weight
+elif weight <= 6.00:
+  ds_price = 9.00 * weight
+elif weight <= 10.00:
+  ds_price = 12.00 * weight
+else:
+  ds_price = 14.25 * weight
+
+print ("Drone shipping price:", ds_price)
+
+print("")
+
+if gs_price < gsp_price and gs_price < ds_price:
+  print ("We recommend the Ground Shipping Price at $", gs_price, "!")
+elif gsp_price < gs_price and gsp_price < ds_price:
+  print ("We recommend the Ground Shipping Premium Price at $",   gsp_price, "!")
+elif ds_price < gs_price and ds_price < gsp_price:
+  print ("We recommend the Drone Shipping Price at $", ds_price, "!")
+else:
+  print ("""
+  Great news! It looks like you have two or more shipping options that are the same price!""")
+
